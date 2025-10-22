@@ -12,6 +12,24 @@ class Pocao:
     def __str__(self):
         return f'**{self.nome} tomada! cura de + {self.cura}**'
 
+class Inventário:
+    def __init__(self, arma, dano_arma, arma2, dano_arma2, poção, cura_pocao):
+        self.arma = arma
+        self.dano_arma = dano_arma
+        self.arma2 = arma2
+        self.dano_arma2 = dano_arma2
+        self.poção = poção
+        self.cura_pocao = cura_pocao
+    def __str__(self):
+        return (f'\n'
+            f'======= Itens do Inventário: ========\n'
+        f' --> Arma: {self.arma} dano {self.dano_arma}\n'
+        f' --> Poção: {self.poção} cura {self.cura_pocao}\n'
+        f' --> 2ª Arma: {self.arma2} dano {self.dano_arma2}\n '
+        f'-----------------------------------------'
+        f'\n'
+        )
+
 class Personagem:
     def __init__(self, nome, vida, poder, arma, magia=0, precisão=0):
         self.nome = nome
@@ -97,6 +115,8 @@ mago = Mago ("Dumbledore", 100, 50, cajado, magia=85)
 goblin = Monstro ("Golum", 85, 35, machado)
 
 exilir = Pocao("Exilir", 45)
+inventario = Inventário('Espada', 20, 'Arco e flecha', 15, 'exilir', 55)
+
 
 guerreiro.equipar(espada)
 arqueiro.equipar(arcoflecha)
@@ -112,3 +132,4 @@ guerreiro.atacar(goblin)
 goblin.atacar(guerreiro)
 
 print(exilir)
+print(inventario)
